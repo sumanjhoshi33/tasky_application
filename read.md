@@ -12,7 +12,7 @@
 # we can link boottrap with the cdn (content deliver network )
 ## some new things for learning 
 >> in the css !important is use to debug forced fully the style when the other style is have 
-
+>> insetadjacent html
 ## some our design and logics 
 --> navegistion bar of add button we can be change there side right to left 
 
