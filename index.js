@@ -1,4 +1,4 @@
-// console.log("Hello World!");
+//this is for static obejct that have array 
 
 // var state = {
 //     taskList: [
@@ -22,7 +22,7 @@
 //         }
 //     ]
 // }
-
+//dynamic array 
 var state = {
   taskList: [],
 };
@@ -31,7 +31,7 @@ var state = {
 var taskContents = document.querySelector(".task__contents");
 var taskModal = document.querySelector(".task__modal__body");
 
-// console.log(taskModal);
+
 
 // dynamic card creations
 var htmlTaskContent = ({ id, title, description, type, url }) => `
@@ -111,7 +111,7 @@ var handleSubmit = (event) => {
     type: document.getElementById("tags").value,
     description: document.getElementById("taskDescription").value,
   };
-
+//if the form well be blink then then this alert well be show 
   if (input.title === "" || input.type === "" || input.description === "") {
     return alert("Please fill all the required fields");
   }
@@ -139,16 +139,9 @@ var openTask = (e) => {
 var deleteTask = (e) => {
   if (!e) e = window.event;
 
-  // 12345
-  // id=4
-  // removeTask= 1235
-
   var targetID = e.target.getAttribute("name");
   var type = e.target.tagName;
-  // console.log(type);
   var removeTask = state.taskList.filter(({ id }) => id !== targetID);
-  // console.log(removeTask);
-
   state.taskList = removeTask;
   updateLocalStorage();
 
@@ -181,7 +174,6 @@ var editTask = (e) => {
   }
 
   taskTitle = parentNode.childNodes[3].childNodes[3];
-  // console.log(taskTitle);
   taskDescription = parentNode.childNodes[3].childNodes[5];
   taskType = parentNode.childNodes[3].childNodes[7].childNodes[1];
   console.log(taskTitle, taskDescription, taskType);
@@ -202,8 +194,6 @@ var saveEdit = (e) => {
 
   var targetID = e.target.id;
   var parentNode = e.target.parentNode.parentNode;
-  // console.log(parentNode);
-
   var taskTitle = parentNode.childNodes[3].childNodes[3];
   var taskDescription = parentNode.childNodes[3].childNodes[5];
   var taskType = parentNode.childNodes[3].childNodes[7].childNodes[1];
@@ -241,25 +231,7 @@ var saveEdit = (e) => {
   submitButton.innerHTML = "Open Task";
 };
 
-// var searchTask = (e) => {
-//   if (!e) e = window.event;
 
-//   while (taskContents.firstChild) {
-//     taskContents.removeChild(taskContents.firstChild);
-//   }
-
-//   var resultData = state.taskList.filter(({ title }) => {
-//     title.includes(e.target.value);
-//   });
-
-//   console.log(resultData);
-
-//   resultData.map((cardData) => {
-//     taskContents.insertAdjacentHTML("beforeend", htmlTaskContent(cardData));
-//   });
-// };
-
-// guys will start 20 mins late pls, pls join by 7:30
 
 // Search Functionality
 const searchTask = (e) => {
